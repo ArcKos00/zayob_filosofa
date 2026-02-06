@@ -1,0 +1,12 @@
+version: '3'
+services:
+  selenium:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+    shm_size: '2gb'
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_SESSION_REQUEST_TIMEOUT=300
+      - SE_SESSION_IDLE_TIMEOUT=3600000
